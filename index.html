@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 2 - Técnica de Programación</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f5f9;
+      color: #202b3c;
+    }
+
+    header {
+      background: #173b65;
+      color: white;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 24px auto;
+      padding: 0 16px 32px;
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px #00000010;
+    }
+
+    h2 {
+      color: #173b65;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 6px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 6px;
+    }
+
+    input {
+      border: 1px solid #b8c4d3;
+      width: min(100%, 280px);
+      box-sizing: border-box;
+    }
+
+    button {
+      border: 0;
+      background: #1769aa;
+      color: white;
+      cursor: pointer;
+      margin: 10px 6px 0 0;
+    }
+
+    button:hover {
+      background: #104d80;
+    }
+
+    .grades, .sales {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .grades div, .sales div {
+      background: #f5f8fc;
+      border: 1px solid #dbe4ef;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .grades input, .sales input {
+      display: block;
+      margin-top: 6px;
+    }
+
+    .results {
+      margin-top: 16px;
+      padding: 14px;
+      background: #eef7ff;
+      border-left: 4px solid #1769aa;
+      border-radius: 5px;
+      line-height: 1.7;
+    }
+
+    .error {
+      color: #a32121;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      color: #5d6b7c;
+      padding: 16px;
+      font-size: 13px;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Práctica 2: Técnica de Programación</h1>
+    <p>Vectores unidimensionales, ciclos y estructuras de control</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Ejercicio 1. Registro y análisis de calificaciones</h2>
+
+      <p>Indique la cantidad de evaluaciones y registre una nota entre 0 y 10 para cada una.</p>
+
+      <label for="cantidadNotas">Cantidad de evaluaciones:</label>
+      <input type="number" id="cantidadNotas" min="1" max="100" step="1" placeholder="Ej. 5">
+
+      <button type="button" onclick="crearCamposNotas()">Crear campos</button>
+
+      <div id="camposNotas" class="grades"></div>
+
+      <button type="button" onclick="analizarNotas()">Analizar calificaciones</button>
+
+      <div id="resultadoNotas" class="results" aria-live="polite">
+        Los resultados aparecerán aquí.
+      </div>
+    </section>
+
+    <section>
+      <h2>Ejercicio 2. Control de ventas diarias de una tienda</h2>
+
+      <p>Indique cuántos días desea analizar y registre las ventas de cada día. Los valores no pueden ser negativos.</p>
+
+      <label for="cantidadDias">Cantidad de días:</label>
+      <input type="number" id="cantidadDias" min="1" max="100" step="1" placeholder="Ej. 5">
+
+      <button type="button" onclick="crearCamposVentas()">Crear campos</button>
+
+      <div id="camposVentas" class="sales"></div>
+
+      <button type="button" onclick="analizarVentas()">Analizar ventas</button>
+
+      <div id="resultadoVentas" class="results" aria-live="polite">
+        Los resultados aparecerán aquí.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Desarrollado con HTML5, CSS y JavaScript Vanilla ES6.
+  </footer>
+
+</body>
+</html>
